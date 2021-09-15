@@ -22,8 +22,8 @@ public class Employee {
     private Long salary;
 
      @JsonBackReference
-    @OneToMany(cascade = CascadeType.ALL)
-     @JoinColumn(name="EMP_ID")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = employee)
+//     @JoinColumn(name="EMP_ID")
     private List<Address> address;
 
     public Employee()

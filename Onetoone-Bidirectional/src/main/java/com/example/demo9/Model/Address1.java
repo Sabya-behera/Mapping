@@ -1,5 +1,8 @@
 package com.example.demo9.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 
@@ -23,6 +26,7 @@ import javax.persistence.*;
         private String country;
 
         @OneToOne(cascade = CascadeType.ALL)
+        @JsonBackReference
         private Student1 student1;
         public Address1() {
 

@@ -1,5 +1,8 @@
 package com.example.demo9.Model;
 
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,7 +24,8 @@ public class Student1 {
     @Column(name = "SECTION")
     private String section;
 
-    @OneToOne(cascade = CascadeType.ALL,mappedBy = "student1")
+    @OneToOne(mappedBy = "student1",cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Address1 address1;
 
     public Student1() {

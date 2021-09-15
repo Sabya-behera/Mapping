@@ -17,7 +17,7 @@ public class StudentController
     @GetMapping("/get")
     public List<Student1> getAllStudent()
     {
-        return studentService.getAllStudent();
+        return (List<Student1>) studentService.getAllStudent();
     }
 
     @PostMapping("/post")

@@ -20,7 +20,7 @@ import java.util.List;
         @GetMapping("/get2")
         public List<Address1> getAllAddress()
         {
-            return addressService.getAllAddress();
+            return (List<Address1>) addressService.getAllAddress();
         }
         @PostMapping("/post2")
         public Address1 addAddress(@RequestBody Address1 address1)

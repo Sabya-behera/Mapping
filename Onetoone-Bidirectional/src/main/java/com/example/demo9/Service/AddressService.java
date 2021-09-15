@@ -16,7 +16,7 @@ public class AddressService
 
     public List<Address1> getAllAddress()
     {
-        return addressRepository.findAll();
+        return (List<Address1>) addressRepository.findAll();
     }
     public Address1 addAddress(Address1 address1)
     {
