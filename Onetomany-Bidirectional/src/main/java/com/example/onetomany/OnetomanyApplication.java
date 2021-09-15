@@ -1,13 +1,13 @@
-package com.example.demo10;
+package com.example.onetomany;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Demo10Application {
+public class OnetomanyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Demo10Application.class, args);
+		SpringApplication.run(OnetomanyApplication.class, args);
 	}
 
 }

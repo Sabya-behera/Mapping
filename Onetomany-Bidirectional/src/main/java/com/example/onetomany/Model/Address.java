@@ -1,14 +1,14 @@
-package com.example.demo10.Model;
+package com.example.onetomany.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="Address")
-public class Address{
+public class Address {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="A_ID")
     private Long aId;
 
@@ -18,25 +18,16 @@ public class Address{
     private String stayID;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JsonBackReference
     private Employee employee;
 
-    public Address()
-    {
-
+    public Address() {
     }
 
-    public Address(Long aId, String mailID, String stayID,Employee employee) {
+    public Address(Long aId, String mailID, String stayID, Employee employee) {
         this.aId = aId;
         this.mailID = mailID;
         this.stayID = stayID;
-        this.employee=employee;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
         this.employee = employee;
     }
 
@@ -64,5 +55,11 @@ public class Address{
         this.stayID = stayID;
     }
 
-}
+    public Employee getEmployee() {
+        return employee;
+    }
 
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+}

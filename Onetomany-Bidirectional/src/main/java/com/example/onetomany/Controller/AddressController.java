@@ -1,8 +1,7 @@
-package com.example.demo10.Controller;
+package com.example.onetomany.Controller;
 
-
-import com.example.demo10.Model.Address;
-import com.example.demo10.Service.AddressService;
+import com.example.onetomany.Model.Address;
+import com.example.onetomany.Service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,4 +29,3 @@ public class AddressController
         return address;
     }
 }
-

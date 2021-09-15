@@ -1,12 +1,13 @@
-package com.example.demo10.Service;
+package com.example.onetomany.Service;
 
-import com.example.demo10.Repository.AddressRepository;
+
+import com.example.onetomany.Model.Address;
+import com.example.onetomany.Repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-@RestController
+@Service
 public class AddressService
 {
     @Autowired
