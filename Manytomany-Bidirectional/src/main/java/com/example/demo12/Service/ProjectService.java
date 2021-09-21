@@ -22,4 +22,12 @@ public class ProjectService
     {
         return projectRepository.save(project);
     }
+
+    public Project updateProject(int id, Project project) {
+        Project project1 = projectRepository.getById(id);
+        project1.setPname(project.getPname());
+        project1.setEmp(project.getEmp());
+        projectRepository.save(project1);
+        return project1;
+    }
 }

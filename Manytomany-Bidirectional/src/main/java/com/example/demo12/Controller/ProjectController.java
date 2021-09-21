@@ -3,12 +3,10 @@ package com.example.demo12.Controller;
 import com.example.demo12.Model.Project;
 import com.example.demo12.Service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 
 @RestController
 public class ProjectController
@@ -23,9 +21,16 @@ public class ProjectController
     }
 
     @PostMapping(value = "/post2")
-     public Project addProject(@RequestBody Project project)
+    public Project addProject(@RequestBody Project project)
     {
         projectService.addProject(project);
+        return project;
+    }
+
+    @PutMapping("/put2/{id}")
+    public Project updateProject(@PathVariable int id,@RequestBody Project project)
+    {
+        projectService.updateProject(id,project);
         return project;
     }
 }

@@ -4,10 +4,7 @@ package com.example.demo12.Controller;
 import com.example.demo12.Model.Emp;
 import com.example.demo12.Service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,9 +20,21 @@ public class EmpController
          return empService.getAllEmp();
     }
 
+    @GetMapping("get/{id}")
+    public Emp getEmployee(@PathVariable int id) {
+        Emp emp = empService.getEmployee(id);
+        return emp;
+    }
+
     @PostMapping(value = "/post")
     public Emp addEmp(@RequestBody Emp emp)
     {
         return empService.addEmp(emp);
+    }
+
+    @PutMapping("/put/{id}")
+    public Emp updateEmployee(@PathVariable int id, @RequestBody Emp emp) {
+        empService.updateEmployee(id, emp);
+        return emp;
     }
 }
