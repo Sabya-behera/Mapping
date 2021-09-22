@@ -21,7 +21,8 @@ public class Student {
     @Column(name = "SECTION")
     private String section;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL/*,optional = false  Every Student row is bound to have an address relation*/)
+    //@JoinColumn(name = "AID") (Join column suggest that there is column AID(FK) in Student table which will refer to the PK of Address table
    private Address address;
 
     public Student() {
