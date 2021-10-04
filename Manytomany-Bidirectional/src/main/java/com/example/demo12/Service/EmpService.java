@@ -34,4 +34,7 @@ public class EmpService {
         return emp1;
     }
 
+    public void deleteEmp(int id) {
+        empRepository.deleteById(id);
+    }
 }

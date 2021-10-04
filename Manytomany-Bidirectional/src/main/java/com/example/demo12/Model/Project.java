@@ -1,5 +1,7 @@
 package com.example.demo12.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class Project {
     private String pname;
 
     @ManyToMany(cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Emp> emp;
 
     public Project() {

@@ -1,5 +1,7 @@
 package com.example.demo12.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,7 +16,7 @@ public class Emp {
     private String name;
 
     @ManyToMany(cascade = CascadeType.ALL)
-   @JoinTable(name = "emp_project",joinColumns ={@JoinColumn(name = "EID")},inverseJoinColumns = {@JoinColumn(name = "PID")})
+    @JoinTable(name = "emp_project",joinColumns ={@JoinColumn(name = "EID")},inverseJoinColumns = {@JoinColumn(name = "PID")})
     private List<Project> project;
 
     public Emp() {

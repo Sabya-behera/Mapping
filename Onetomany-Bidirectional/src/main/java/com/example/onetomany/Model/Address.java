@@ -19,6 +19,7 @@ public class Address {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonBackReference
+    //@JoinColumn(name = "aid")
     private Employee employee;
 
     public Address() {

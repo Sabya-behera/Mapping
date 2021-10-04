@@ -37,4 +37,10 @@ public class EmpController
         empService.updateEmployee(id, emp);
         return emp;
     }
+    @DeleteMapping("/delete/{id}")
+    public void deleteEmp(@PathVariable(value = "id") int id)
+    {
+        empService.deleteEmp(id);
+    }
+
 }
