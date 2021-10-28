@@ -22,4 +22,22 @@ public class AddressService
     {
         return addressRepository.save(address);
     }
+
+    public Address getAddressById(long id) {
+       return addressRepository.getById(id);
+    }
+
+    public String deleteAddress(long id) {
+        addressRepository.deleteById(id);
+        return "DELETED";
+    }
+
+    public Address updateAddress(long id, Address address) {
+        Address address1 = addressRepository.getById(id);
+         address1.setCity(address.getCity());
+         address1.setCountry(address.getCountry());
+         address1.setStreet(address.getStreet());
+         addressRepository.save(address1);
+         return address1;
+    }
 }

@@ -14,6 +14,12 @@ public class StudentController
     @Autowired
     StudentService studentService;
 
+//     public StudentController(StudentService studentService)
+//     {
+//         this.studentService=studentService;
+//     }
+//    StudentService studentService=new StudentService();
+
     @GetMapping("/get")
     public List<Student> getAllStudent()
     {
@@ -27,4 +33,22 @@ public class StudentController
         return student;
     }
 
+    @GetMapping("/get/{id}")
+    public Student getStudentById(@PathVariable long id)
+    {
+        return studentService.getStudentById(id);
+    }
+
+     @DeleteMapping("/delete/{id}")
+    public String deleteStudent(@PathVariable("id") long id)
+    {
+        return studentService.deleteStudent(id);
+    }
+
+    @PutMapping("/put/{id}")
+    public Student updateStudent(@PathVariable("id") long id,@RequestBody Student student)
+    {
+      studentService.updateStudent(id,student);
+      return student;
+    }
 }
